@@ -8,27 +8,27 @@ const AddEvent = () => {
       <section>
         <Form>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Event Name</Form.Label>
+            <Form.Label className="attach">Event Name</Form.Label>
             <Form.Control type="text" placeholder="Enter event name" />
           </Form.Group>
 
           <Form.Group controlId="formBasicDuration">
-            <Form.Label>Duration</Form.Label>
+            <Form.Label className="attach">Duration</Form.Label>
             <Form.Control type="text" placeholder="Duration" />
           </Form.Group>
 
           <Form.Group controlId="formBasicDate">
-            <Form.Label>Date</Form.Label>
+            <Form.Label className="attach">Date</Form.Label>
             <Form.Control type="text" placeholder="Date" />
           </Form.Group>
 
           <Form.Group controlId="formBasicPartipants">
-            <Form.Label>No of Participants</Form.Label>
+            <Form.Label className="attach">No of Participants</Form.Label>
             <Form.Control type="text" placeholder="No of participants" />
           </Form.Group>
 
           <Form.Group controlId="formBasicOrganizers">
-            <Form.Label>Organizer</Form.Label>
+            <Form.Label className="attach">Organizer</Form.Label>
             <Form.Control type="text" placeholder="Organizer" />
           </Form.Group>
           <Button variant="primary" type="submit">
@@ -41,6 +41,10 @@ const AddEvent = () => {
 };
 
 const Wrapper = styled.article`
+  .attach {
+    font-weight: 600;
+    font-family: Poppins;
+  }
   section {
     padding-top: 40px;
     width: 90vw;

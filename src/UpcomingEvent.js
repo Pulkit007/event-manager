@@ -10,13 +10,14 @@ const UpcomingEvent = () => {
       <main>
         <h2>Upcoming Events</h2>
         <Table responsive>
-          <thead>
+          <thead className="thead-dark">
             <tr>
               <th>Event Name</th>
               <th>Duration</th>
               <th>Date</th>
               <th>No of participants</th>
               <th>Organizer</th>
+              <th>Registered</th>
             </tr>
           </thead>
           <tbody>
@@ -30,7 +31,7 @@ const UpcomingEvent = () => {
                 isRegistered,
               } = event;
               return (
-                <tr key={index}>
+                <tr style={{ fontWeight: "normal" }} key={index}>
                   <th>{name}</th>
                   <th>{duration}</th>
                   <th>{date}</th>
@@ -60,6 +61,21 @@ const UpcomingEvent = () => {
 };
 
 const Wrapper = styled.article`
+  tr th {
+    font-weight: 400;
+    font-family: sans-serif;
+  }
+  thead th {
+    background-color: #007bff !important;
+    border-bottom: none;
+    font-weight: 500;
+  }
+  h2 {
+    font-family: "Poppins", sans-serif;
+    padding-bottom: 15px;
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
   main {
     width: 90vw;
     margin: 0 auto;

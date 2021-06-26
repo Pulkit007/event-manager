@@ -5,8 +5,14 @@ import { Link } from "react-router-dom";
 
 const header = () => {
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand>Event Manager</Navbar.Brand>
+    <Navbar
+      style={{ fontWeight: "300", fontFamily: "Montserrat" }}
+      bg="light"
+      expand="lg"
+    >
+      <Navbar.Brand style={{ fontWeight: "500", paddingLeft: "70px" }}>
+        Event Manager
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
