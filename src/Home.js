@@ -8,8 +8,16 @@ const Home = ({ login }) => {
     <Wrapper>
       <section>
         <div style={{ padding: "0px 50px" }}>
-          <h1 style={{ paddingBottom: "20px" }}>Welcome to Rel-Event</h1>
-          <h3 style={{ paddingBottom: "10px" }}>
+          <h1
+            style={{
+              paddingBottom: "20px",
+              fontWeight: "700",
+              paddingTop: "40px",
+            }}
+          >
+            Welcome to Rel-Event
+          </h1>
+          <h3 style={{ paddingBottom: "20px" }}>
             See the events you registered in
           </h3>
           {login ? (
@@ -27,9 +35,9 @@ const Home = ({ login }) => {
             style={{
               width: "45%",
               margin: "-70px auto",
-              height: "550px",
+              height: "510px",
               float: "right",
-              marginRight: "90px",
+              marginRight: "110px",
             }}
             src="./images/event_home.png"
             alt="home_cover"

@@ -8,7 +8,7 @@ const Login = ({ login, setLogin }) => {
     <Wrapper>
       <div className="container">
         <img src="./images/login-event.png" alt="Rel-event" />
-        <h1>Rel-Event</h1>
+        <h1 style={{ fontFamily: "Poppins", fontWeight: "bold" }}>Rel-Event</h1>
         <div className="form">
           <form>
             <div className="grey-text">
@@ -19,6 +19,7 @@ const Login = ({ login, setLogin }) => {
                 validate
                 error="wrong"
                 success="right"
+                style={{ borderRadius: "5px" }}
               />
               <MDBInput
                 icon="lock"
@@ -26,6 +27,7 @@ const Login = ({ login, setLogin }) => {
                 group
                 type="email"
                 validate
+                style={{ borderRadius: "5px" }}
               />
             </div>
           </form>
@@ -36,6 +38,7 @@ const Login = ({ login, setLogin }) => {
               setLogin(true);
             }}
             className="btn"
+            style={{ border: "1px solid black" }}
           >
             login / sign up
           </button>
@@ -45,7 +48,7 @@ const Login = ({ login, setLogin }) => {
   );
 };
 const Wrapper = styled.section`
-  min-height: 100vh;
+  min-height: 40rem;
   display: grid;
   place-items: center;
   .container {
@@ -56,6 +59,7 @@ const Wrapper = styled.section`
   }
   .form {
     margin: 0 auto;
+    font-family: "Poppins";
   }
   MDBRow {
     margin: 0 auto;
@@ -68,6 +72,9 @@ const Wrapper = styled.section`
   }
   h1 {
     margin-bottom: 1.5rem;
+  }
+  button {
+    margin-top: 10px;
   }
 `;
 export default Login;

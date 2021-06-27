@@ -66,6 +66,7 @@ function App() {
             <UpcomingEvent
               upcoming={upcomingData}
               setUpcoming={setUpcomingData}
+              login={login}
             />
           </Route>
         </Switch>

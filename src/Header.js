@@ -37,7 +37,11 @@ const header = ({ login }) => {
               <Link to="/pastevents">Past Events</Link>
             </NavDropdown.Item>
             <NavDropdown.Item>
-              <Link to="/upcomingevents">Upcoming Events</Link>
+              {login ? (
+                <Link to="/upcomingevents">Upcoming Events</Link>
+              ) : (
+                <Link to="/login">Upcoming Events</Link>
+              )}
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>

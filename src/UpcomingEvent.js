@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 
-const UpcomingEvent = ({ upcoming, setUpcoming }) => {
+const UpcomingEvent = ({ upcoming, setUpcoming, login }) => {
   useEffect(() => {}, [upcoming]);
   return (
     <Wrapper>
