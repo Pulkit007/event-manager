@@ -4,7 +4,7 @@ import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import { createEvent } from "./api/Api";
 
-const AddEvent = ({ upcoming, setUpcoming }) => {
+const AddEvent = () => {
   const [name, setName] = useState("");
   const [duration, setDuration] = useState("");
   const [date, setDate] = useState("");
@@ -93,7 +93,6 @@ const AddEvent = ({ upcoming, setUpcoming }) => {
                   setOrganizer("");
                 })
                 .catch((err) => console.log(err));
-              setUpcoming([...upcoming, item]);
             }}
           >
             Add Event

@@ -4,12 +4,10 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import upcoming from "./upcoming_event";
 
-const MyEvents = () => {
-  const events = upcoming.filter((event) => event.isRegistered === true);
+const MyEvents = ({ myevents, setUpcoming }) => {
+  const events = myevents.filter((event) => event.isRegistered === true);
   const [data, setData] = useState(events);
-  useEffect(() => {
-    console.log("hello");
-  }, [data]);
+  useEffect(() => {}, [data]);
   return (
     <Wrapper>
       <main>
@@ -48,11 +46,11 @@ const MyEvents = () => {
                         className="btn"
                         style={{ backgroundColor: "#FF2400", color: "white" }}
                         onClick={() => {
-                          const simp = event;
-                          simp.isRegistered = false;
+                          const desai = event;
+                          desai.isRegistered = false;
                           setData([
                             ...data.slice(0, index),
-                            simp,
+                            desai,
                             ...data.slice(index + 1),
                           ]);
                         }}

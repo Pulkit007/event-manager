@@ -1,9 +1,8 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import styled from "styled-components";
-import past from "./past_event";
 
-const PastEvent = () => {
+const PastEvent = ({ past }) => {
   return (
     <Wrapper>
       <main>

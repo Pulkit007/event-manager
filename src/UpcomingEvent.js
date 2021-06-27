@@ -3,9 +3,8 @@ import { Table } from "react-bootstrap";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 
-const UpcomingEvent = ({ upcoming }) => {
-  const [data, setData] = useState(upcoming);
-  useEffect(() => {}, [data]);
+const UpcomingEvent = ({ upcoming, setUpcoming }) => {
+  useEffect(() => {}, [upcoming]);
   return (
     <Wrapper>
       <main>
@@ -22,7 +21,7 @@ const UpcomingEvent = ({ upcoming }) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((event, index) => {
+            {upcoming.map((event, index) => {
               const {
                 name,
                 duration,
@@ -56,10 +55,10 @@ const UpcomingEvent = ({ upcoming }) => {
                         onClick={() => {
                           const simp = event;
                           simp.isRegistered = true;
-                          setData([
-                            ...data.slice(0, index),
+                          setUpcoming([
+                            ...upcoming.slice(0, index),
                             simp,
-                            ...data.slice(index + 1),
+                            ...upcoming.slice(index + 1),
                           ]);
                         }}
                       >

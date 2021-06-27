@@ -5,4 +5,10 @@ const api = axios.create({
 });
 
 export const createEvent = payload=> api.post("/event",payload);
-export const getEvents = ()=>api.get("/event");
+export const getEvents = async() => {
+    const response = await api.get("/event");
+    if(response){
+        const {data} = response.data;
+        return data;
+    }
+}
