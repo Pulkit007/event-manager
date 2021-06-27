@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import "./index.css";
 
 const Home = () => {
@@ -7,11 +8,13 @@ const Home = () => {
     <Wrapper>
       <section>
         <div style={{ padding: "0px 50px" }}>
-          <h1 style={{ paddingBottom: "20px" }}>Welcome to Event Manager</h1>
+          <h1 style={{ paddingBottom: "20px" }}>Welcome to Rel-Event</h1>
           <h3 style={{ paddingBottom: "10px" }}>
             See the events you registered in
           </h3>
-          <button className="btn">Your Events</button>
+          <Link to="/myevents">
+            <button className="btn">Your Events</button>
+          </Link>
         </div>
         <div>
           <img

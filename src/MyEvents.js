@@ -1,15 +1,19 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import upcoming from "./upcoming_event";
 
-const UpcomingEvent = ({ upcoming }) => {
-  const [data, setData] = useState(upcoming);
-  useEffect(() => {}, [data]);
+const MyEvents = () => {
+  const events = upcoming.filter((event) => event.isRegistered === true);
+  const [data, setData] = useState(events);
+  useEffect(() => {
+    console.log("hello");
+  }, [data]);
   return (
     <Wrapper>
       <main>
-        <h2>Upcoming Events</h2>
+        <h2>Events you participated in</h2>
         <Table responsive>
           <thead className="thead-dark">
             <tr>
@@ -18,11 +22,11 @@ const UpcomingEvent = ({ upcoming }) => {
               <th>Date</th>
               <th>No of participants</th>
               <th>Organizer</th>
-              <th>Registered</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
-            {data.map((event, index) => {
+            {events.map((event, index) => {
               const {
                 name,
                 duration,
@@ -38,24 +42,14 @@ const UpcomingEvent = ({ upcoming }) => {
                   <th>{date}</th>
                   <th>{no_of_participants}</th>
                   <th>{organizer}</th>
-                  <th>
-                    {isRegistered ? (
-                      <p
-                        style={{
-                          color: "#228B22",
-                          fontWeight: "bold",
-                          letterSpacing: "1px",
-                        }}
-                      >
-                        REGISTERED
-                      </p>
-                    ) : (
+                  {isRegistered && (
+                    <th>
                       <button
                         className="btn"
                         style={{ backgroundColor: "#FF2400", color: "white" }}
                         onClick={() => {
                           const simp = event;
-                          simp.isRegistered = true;
+                          simp.isRegistered = false;
                           setData([
                             ...data.slice(0, index),
                             simp,
@@ -63,10 +57,10 @@ const UpcomingEvent = ({ upcoming }) => {
                           ]);
                         }}
                       >
-                        Register
+                        REMOVE
                       </button>
-                    )}
-                  </th>
+                    </th>
+                  )}
                 </tr>
               );
             })}
@@ -101,4 +95,4 @@ const Wrapper = styled.article`
   }
 `;
 
-export default UpcomingEvent;
+export default MyEvents;

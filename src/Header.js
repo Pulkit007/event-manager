@@ -10,9 +10,7 @@ const header = () => {
       bg="light"
       expand="lg"
     >
-      <Navbar.Brand style={{ fontWeight: "500", paddingLeft: "70px" }}>
-        Event Manager
-      </Navbar.Brand>
+      <Navbar.Brand style={{ fontWeight: "500" }}>Rel-Event</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -21,6 +19,9 @@ const header = () => {
           </Nav.Link>
           <Nav.Link>
             <Link to="/addevent">Add Event</Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link to="/myevents">My Events</Link>
           </Nav.Link>
           <NavDropdown title="Events" id="basic-nav-dropdown">
             <NavDropdown.Item>
