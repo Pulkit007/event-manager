@@ -5,7 +5,7 @@ import PastEvent from "./PastEvent";
 import Home from "./Home";
 import MyEvents from "./MyEvents";
 import UpcomingEvent from "./UpcomingEvent";
-import { useState, useEffect, setState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { getEvents } from "./api/Api";
 import Login from "./Login";

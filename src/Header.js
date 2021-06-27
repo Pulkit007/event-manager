@@ -1,6 +1,5 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Redirect } from "react-router";
 import { Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
