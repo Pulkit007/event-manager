@@ -8,8 +8,10 @@ import UpcomingEvent from "./UpcomingEvent";
 import { useState, useEffect, setState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { getEvents } from "./api/Api";
+import Login from "./Login";
 
 function App() {
+  const [login, setLogin] = useState(false);
   const [data, setData] = useState([]);
   const [upcomingData, setUpcomingData] = useState([]);
   useEffect(() => {
@@ -43,10 +45,13 @@ function App() {
   return (
     <main>
       <Router>
-        <Header />
+        <Header login={login} />
         <Switch>
-          <Route path="/" exact>
-            <Home />
+          <Route path="/" exact={true}>
+            <Home login={login} />
+          </Route>
+          <Route path="/login">
+            <Login login={login} setLogin={setLogin} />
           </Route>
           <Route path="/myevents">
             <MyEvents myevents={upcomingData} setUpcoming={setUpcomingData} />

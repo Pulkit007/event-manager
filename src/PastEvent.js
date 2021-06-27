@@ -45,6 +45,7 @@ const Wrapper = styled.article`
   }
   thead th {
     background-color: #007bff !important;
+    border-top: none;
     border-bottom: none;
     font-weight: 500;
   }

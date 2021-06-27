@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./index.css";
 
-const Home = () => {
+const Home = ({ login }) => {
   return (
     <Wrapper>
       <section>

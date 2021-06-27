@@ -2,7 +2,6 @@ import React from "react";
 import { Table } from "react-bootstrap";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import upcoming from "./upcoming_event";
 
 const MyEvents = ({ myevents, setUpcoming }) => {
   const events = myevents.filter((event) => event.isRegistered === true);
@@ -76,6 +75,7 @@ const Wrapper = styled.article`
   }
   thead th {
     background-color: #007bff !important;
+    border-top: none;
     border-bottom: none;
     font-weight: 500;
   }

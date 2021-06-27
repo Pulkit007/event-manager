@@ -1,9 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Redirect } from "react-router";
 import { Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const header = () => {
+const header = ({ login }) => {
   return (
     <Navbar
       style={{ fontWeight: "300", fontFamily: "Montserrat" }}
@@ -18,10 +19,18 @@ const header = () => {
             <Link to="/">Home</Link>
           </Nav.Link>
           <Nav.Link>
-            <Link to="/addevent">Add Event</Link>
+            {login ? (
+              <Link to="/addevent">Add Event</Link>
+            ) : (
+              <Link to="/login">Add Event</Link>
+            )}
           </Nav.Link>
           <Nav.Link>
-            <Link to="/myevents">My Events</Link>
+            {login ? (
+              <Link to="/myevents">My Events</Link>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </Nav.Link>
           <NavDropdown title="Events" id="basic-nav-dropdown">
             <NavDropdown.Item>
