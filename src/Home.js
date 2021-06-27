@@ -12,9 +12,15 @@ const Home = ({ login }) => {
           <h3 style={{ paddingBottom: "10px" }}>
             See the events you registered in
           </h3>
-          <Link to="/myevents">
-            <button className="btn">Your Events</button>
-          </Link>
+          {login ? (
+            <Link to="/myevents">
+              <button className="btn">Your Events</button>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button className="btn">Your Events</button>
+            </Link>
+          )}
         </div>
         <div>
           <img
